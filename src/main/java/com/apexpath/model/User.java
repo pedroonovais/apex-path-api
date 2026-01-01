@@ -7,6 +7,8 @@ import lombok.Builder;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,6 +38,7 @@ public class User {
     @Email(message = "O email deve ser válido")
     private String email;
     
+    @JsonIgnore
     @NotBlank(message = "A senha é obrigatória")
     private String password;
 

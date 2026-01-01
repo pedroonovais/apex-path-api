@@ -1,3 +1,7 @@
 spring:
   application:
     name: apexpath
+
+jwt:
+  secret: chave-secreta-para-jwt
+  expiration: 86400000

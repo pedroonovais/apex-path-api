@@ -89,7 +89,7 @@
 			<artifactId>jjwt-api</artifactId>
 			<version>0.12.3</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-impl</artifactId>
@@ -101,6 +101,13 @@
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-jackson</artifactId>
 			<version>0.12.3</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- Driver PostgreSQL -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
