@@ -2,8 +2,8 @@ package com.apexpath.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.apexpath.dto.LoginRequest;
-import com.apexpath.dto.LoginResponse;
+import com.apexpath.dto.LoginRequestDto;
+import com.apexpath.dto.LoginResponseDto;
 import com.apexpath.service.AuthService;
 
 import jakarta.validation.Valid;
@@ -22,7 +22,7 @@ public class AuthController {
     private AuthService authService;
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<LoginResponseDto> login(@Valid @RequestBody LoginRequestDto loginRequest) {
         return ResponseEntity.ok(authService.login(loginRequest));
     }
 }

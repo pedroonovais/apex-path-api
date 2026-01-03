@@ -1,6 +1,6 @@
 package com.apexpath.dto;
 
-public record LoginResponse(
+public record LoginResponseDto(
     String token,
     String expiration
 ) {}

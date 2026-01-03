@@ -8,8 +8,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.stereotype.Service;
 
 import com.apexpath.config.JwtService;
-import com.apexpath.dto.LoginRequest;
-import com.apexpath.dto.LoginResponse;
+import com.apexpath.dto.LoginRequestDto;
+import com.apexpath.dto.LoginResponseDto;
 
 @Service
 public class AuthService {
@@ -20,7 +20,10 @@ public class AuthService {
     @Autowired
     private JwtService jwtService;
 
-    public LoginResponse login(LoginRequest loginRequest) {
+    @Autowired
+    private UserService userService;
+
+    public LoginResponseDto login(LoginRequestDto loginRequest) {
         
         Authentication authentication = authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(loginRequest.email(), loginRequest.password())
@@ -30,6 +33,8 @@ public class AuthService {
 
         String token = jwtService.generateToken(userDetails);
 
-        return new LoginResponse(token, jwtService.extractExpiration(token).toString());
+        userService.updateLatestLogin(loginRequest.email());
+
+        return new LoginResponseDto(token, jwtService.extractExpiration(token).toString());
     }
 }
