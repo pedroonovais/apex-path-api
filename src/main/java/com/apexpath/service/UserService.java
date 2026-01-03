@@ -34,6 +34,12 @@ public class UserService {
                 .email(userRequest.email())
                 .password(passwordEncoder.encode(userRequest.password()))
                 .experience(0L)
+                .strength(0)
+                .resistance(0)
+                .intelligence(0)
+                .discipline(0)
+                .faith(0)
+                .charisma(0)
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
                 .build();

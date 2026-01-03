@@ -45,6 +45,24 @@ public class User {
     @NotNull(message = "A experiência é obrigatória")
     private Long experience;
 
+    @NotNull(message = "A força é obrigatória")
+    private int strength;
+
+    @NotNull(message = "A resistência é obrigatória")
+    private int resistance;
+
+    @NotNull(message = "A inteligência é obrigatória")
+    private int intelligence;
+    
+    @NotNull(message = "A disciplina é obrigatória")
+    private int discipline;
+
+    @NotNull(message = "A fé é obrigatória")
+    private int faith;
+
+    @NotNull(message = "O carisma é obrigatório")
+    private int charisma;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
