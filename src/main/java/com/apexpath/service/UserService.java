@@ -1,6 +1,5 @@
 package com.apexpath.service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,15 +32,6 @@ public class UserService {
                 .username(userRequest.username())
                 .email(userRequest.email())
                 .password(passwordEncoder.encode(userRequest.password()))
-                .experience(0L)
-                .strength(0)
-                .resistance(0)
-                .intelligence(0)
-                .discipline(0)
-                .faith(0)
-                .charisma(0)
-                .createdAt(LocalDateTime.now())
-                .updatedAt(LocalDateTime.now())
                 .build();
 
             return userRepository.save(user);
