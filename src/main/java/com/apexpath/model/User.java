@@ -78,7 +78,6 @@ public class User {
     @PrePersist
     void onPersist() {
         this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
         this.experience = 0L;
         this.strength = 0;
         this.resistance = 0;
